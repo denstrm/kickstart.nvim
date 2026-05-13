@@ -2,9 +2,12 @@ vim.pack.add({
   { src = 'https://github.com/jpalardy/vim-slime' },
 })
 
-vim.g.slime_target = 'neovim'
+vim.g.slime_target = 'tmux'
+vim.g.slime_default_config = {
+  socket_name = 'default',
+  target_pane = '{last}',
+}
 
--- Stata mappings
 vim.keymap.set('n', '<leader>rl', '<Plug>SlimeLineSend',
   { remap = true, silent = true, desc = '[R]un [L]ine' })
 vim.keymap.set('x', '<leader>rs', '<Plug>SlimeRegionSend',
